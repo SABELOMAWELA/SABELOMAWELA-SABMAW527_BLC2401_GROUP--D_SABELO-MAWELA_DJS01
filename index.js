@@ -16,17 +16,17 @@ const fuelBurnRate = 0.5; // fuel burn rate (kg/s)
 
 const Newdistance = distance + (Velocity*Time)/Time //calcultes new distance
 const remainingFuel = fuel - (fuelBurnRate*Time)  //calculates remaining fuel
-const Newvelocity = calcNewVel(Acceleration, Velocity, Time) //calculates new velocity based on acceleration
+const Newvelocity = calcNewVelocity(Acceleration, Velocity, Time) //calculates new velocity based on acceleration
 
 // Pick up an error with how the function below is called and make it robust to such errors
-function calcNewVel (Acceleration, Velocity, Time) { 
+function calcNewVelocity (Acceleration, Velocity, Time) { 
   return Velocity + (Acceleration*Time)*(Time/1000)
 }
 
-console.log(`Corrected New Velocity: ${Newvelocity} km/h`);
-console.log(`Corrected New Distance: ${Newdistance} km`);
-console.log(`Corrected Remaining Fuel: ${remainingFuel} kg`);
 
+Newvelocity === 48880 ? console.log(`Corrected New Velocity: ${Newvelocity} km/h `) : console.error("The units don't match 48880 km/h.");
+Newdistance === 10000 ? console.log(`Corrected New distance: ${Newdistance} km `) : console.error("the units don't match 10000 km.");
+remainingFuel === 3,200 ? console.log(`Corrected Remaining fuel: ${remainingFuel} kg `) : console.error("the units don't match 3,200 kg.")
 
 
 
